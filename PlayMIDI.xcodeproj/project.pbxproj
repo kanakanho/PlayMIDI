@@ -13,6 +13,8 @@
 		EB71FA4E2C5A4232004B6E85 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB71FA4D2C5A4232004B6E85 /* ImmersiveView.swift */; };
 		EB71FA502C5A4233004B6E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB71FA4F2C5A4233004B6E85 /* Assets.xcassets */; };
 		EB71FA532C5A4233004B6E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB71FA522C5A4233004B6E85 /* Preview Assets.xcassets */; };
+		EB71FA5B2C5A4249004B6E85 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB71FA5A2C5A4249004B6E85 /* Play.swift */; };
+		EB71FA632C5A450B004B6E85 /* audio.mid in Resources */ = {isa = PBXBuildFile; fileRef = EB71FA622C5A450B004B6E85 /* audio.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EB71FA4F2C5A4233004B6E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB71FA522C5A4233004B6E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB71FA542C5A4233004B6E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB71FA5A2C5A4249004B6E85 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
+		EB71FA622C5A450B004B6E85 /* audio.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = audio.mid; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 		EB71FA392C5A4232004B6E85 = {
 			isa = PBXGroup;
 			children = (
+				EB71FA622C5A450B004B6E85 /* audio.mid */,
 				EB71FA442C5A4232004B6E85 /* PlayMIDI */,
 				EB71FA452C5A4232004B6E85 /* Packages */,
 				EB71FA432C5A4232004B6E85 /* Products */,
@@ -60,6 +65,7 @@
 			children = (
 				EB71FA492C5A4232004B6E85 /* PlayMIDIApp.swift */,
 				EB71FA4B2C5A4232004B6E85 /* ContentView.swift */,
+				EB71FA5A2C5A4249004B6E85 /* Play.swift */,
 				EB71FA4D2C5A4232004B6E85 /* ImmersiveView.swift */,
 				EB71FA4F2C5A4233004B6E85 /* Assets.xcassets */,
 				EB71FA542C5A4233004B6E85 /* Info.plist */,
@@ -146,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB71FA532C5A4233004B6E85 /* Preview Assets.xcassets in Resources */,
+				EB71FA632C5A450B004B6E85 /* audio.mid in Resources */,
 				EB71FA502C5A4233004B6E85 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				EB71FA4C2C5A4232004B6E85 /* ContentView.swift in Sources */,
 				EB71FA4A2C5A4232004B6E85 /* PlayMIDIApp.swift in Sources */,
 				EB71FA4E2C5A4232004B6E85 /* ImmersiveView.swift in Sources */,
+				EB71FA5B2C5A4249004B6E85 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

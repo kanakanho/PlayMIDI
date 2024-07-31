@@ -19,9 +19,14 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
-
+            Image(systemName: "waveform.circle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100)
+                .onTapGesture {
+                    play(file: "audio")
+                }
+            
             Text("Hello, world!")
 
             Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
