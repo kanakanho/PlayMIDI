@@ -5,28 +5,42 @@
 //  Created by blue ken on 2024/07/31.
 //
 
-import Foundation
 import AVFoundation
 
-var musicPlayer: MusicPlayer?
-var sequence: MusicSequence?
-
-
-func play(file: String) {
-    guard let midiFile = Bundle.main.url(forResource: file, withExtension: "mid") else {
-        print("MIDI file not found")
-        return
-    }
-    NewMusicPlayer(&musicPlayer)
-    NewMusicSequence(&sequence)
+class Play {
+    private let midiFile: String
+    private let soundFontFile: String
+    private var midiPlayer: AVMIDIPlayer?
     
-    if let musicPlayer = musicPlayer, let sequence = sequence {
-        let status = MusicSequenceFileLoad(sequence, midiFile as CFURL, .midiType, MusicSequenceLoadFlags())
-        if status != noErr {
-            print("Error loading MIDI file: \(status)")
+    init(midiFile: String,soundFontFile: String) {
+        self.midiFile = midiFile
+        self.soundFontFile = soundFontFile
+        
+        // Ensure MIDI file URL is valid
+        guard let midiFileURL = Bundle.main.url(forResource: midiFile, withExtension: "mid") else {
+            print("MIDIファイルが見つかりません")
+            fatalError("MIDIファイルが見つかりません")
+        }
+        
+        // Ensure SoundFont file URL is valid
+        guard let soundFontFileURL = Bundle.main.url(forResource: soundFontFile, withExtension: "sf2") else {
+            print("SoundFontファイルが見つかりません")
+            fatalError("SoundFontファイルが見つかりません")
+        }
+        
+        do {
+            midiPlayer = try AVMIDIPlayer(contentsOf: midiFileURL, soundBankURL: soundFontFileURL)
+        } catch {
+            print("AVMIDIPlayerの初期化エラー: \(error.localizedDescription)")
             return
         }
-        MusicPlayerSetSequence(musicPlayer, sequence)
-        MusicPlayerStart(musicPlayer)
+    }
+    
+    func play() {
+        midiPlayer?.prepareToPlay()
+        
+        if let midiPlayer = midiPlayer, !midiPlayer.isPlaying {
+            midiPlayer.play()
+        }
     }
 }
