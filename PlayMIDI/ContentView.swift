@@ -10,13 +10,14 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
-
+    
     @State private var showImmersiveSpace = false
     @State private var immersiveSpaceIsShown = false
-
+    @State private var player: Play = Play(midiFile: "audio",soundFontFile: "soundfont")
+    
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
-
+    
     var body: some View {
         VStack {
             Image(systemName: "waveform.circle")
@@ -24,11 +25,11 @@ struct ContentView: View {
                 .scaledToFit()
                 .frame(width: 100)
                 .onTapGesture {
-                    play(file: "audio")
+                    player.play()
                 }
             
             Text("Hello, world!")
-
+            
             Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
                 .font(.title)
                 .frame(width: 360)
