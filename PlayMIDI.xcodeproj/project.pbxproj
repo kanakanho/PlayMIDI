@@ -16,6 +16,8 @@
 		EB71FA5B2C5A4249004B6E85 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB71FA5A2C5A4249004B6E85 /* Play.swift */; };
 		EBD72B9B2C5CDB120076894F /* audio.mid in Resources */ = {isa = PBXBuildFile; fileRef = EBD72B992C5CDB120076894F /* audio.mid */; };
 		EBD72BC82C5CF9940076894F /* soundfont.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = EBD72BC72C5CF9940076894F /* soundfont.sf2 */; };
+		EBD72BCA2C61FF8B0076894F /* MIDINotePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD72BC92C61FF8B0076894F /* MIDINotePlay.swift */; };
+		EBD72BCC2C6200FC0076894F /* MIDINoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD72BCB2C6200FC0076894F /* MIDINoteData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		EB71FA5A2C5A4249004B6E85 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 		EBD72B992C5CDB120076894F /* audio.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = audio.mid; sourceTree = SOURCE_ROOT; };
 		EBD72BC72C5CF9940076894F /* soundfont.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundfont.sf2; sourceTree = SOURCE_ROOT; };
+		EBD72BC92C61FF8B0076894F /* MIDINotePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDINotePlay.swift; sourceTree = "<group>"; };
+		EBD72BCB2C6200FC0076894F /* MIDINoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDINoteData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				EB71FA492C5A4232004B6E85 /* PlayMIDIApp.swift */,
 				EB71FA4B2C5A4232004B6E85 /* ContentView.swift */,
 				EB71FA5A2C5A4249004B6E85 /* Play.swift */,
+				EBD72BCB2C6200FC0076894F /* MIDINoteData.swift */,
+				EBD72BC92C61FF8B0076894F /* MIDINotePlay.swift */,
 				EB71FA4D2C5A4232004B6E85 /* ImmersiveView.swift */,
 				EB71FA4F2C5A4233004B6E85 /* Assets.xcassets */,
 				EB71FA542C5A4233004B6E85 /* Info.plist */,
@@ -169,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB71FA4C2C5A4232004B6E85 /* ContentView.swift in Sources */,
+				EBD72BCA2C61FF8B0076894F /* MIDINotePlay.swift in Sources */,
 				EB71FA4A2C5A4232004B6E85 /* PlayMIDIApp.swift in Sources */,
+				EBD72BCC2C6200FC0076894F /* MIDINoteData.swift in Sources */,
 				EB71FA4E2C5A4232004B6E85 /* ImmersiveView.swift in Sources */,
 				EB71FA5B2C5A4249004B6E85 /* Play.swift in Sources */,
 			);
