@@ -16,6 +16,9 @@ struct ContentView: View {
     @State private var player: Play = Play(midiFile: "audio",soundFontFile: "soundfont")
     @State private var notePlayer: MIDINotePlay = MIDINotePlay(soundFontFile: "soundfont")
     
+    @State private var selectedMIDI: UInt8 = 0
+    @State private var midiNoteData = MIDINoteData()
+    
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
@@ -43,13 +46,22 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: 100)
                         .onTapGesture {
-                            notePlayer.allPlay()
+                            if(!midiNoteData.existsMidiData(number: selectedMIDI)){
+                                print("キーが存在しません")
+                                return
+                            }
+                            notePlayer.play(midinote: midiNoteData.getMidiDataFromNumber(number: selectedMIDI))
                         }
                 }
                 Spacer(minLength: 10)
             }
             
-            Text("Hello, world!")
+            Picker("鳴らすMIDIデータの選択", selection: $selectedMIDI) {
+                ForEach(midiNoteData.getAllMidiNotes(), id: \.number) { note in
+                    Text(note.name).tag(note.number)
+                }
+            }
+            .pickerStyle(MenuPickerStyle())
             
             Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
                 .font(.title)
